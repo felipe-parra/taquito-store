@@ -1,33 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Navbar, NavLinks, NavLogo } from "../../styles/Navbar";
 
-const NavLinks = [
+const NAV_LINKS = [
   {
     title: "Home",
     path: "/",
   },
   {
-    title: "About",
-    path: "/about",
+    title: "Categories",
+    path: "/categories",
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: "Cart",
+    path: "/cart",
   },
 ];
 
-export default function Navbar() {
+export default function NavbarComponent() {
   return (
-    <nav>
-      <ul>
-        {NavLinks.map((link, index) => {
-          return (
-            <li key={index}>
-              <Link to={link.path}>{link.title}</Link>
-            </li>
-          );
+    <Navbar>
+      <NavLogo>
+        <h1>TaquitoStore</h1>
+      </NavLogo>
+      <NavLinks>
+        {NAV_LINKS.map((link, index) => {
+          return <Link to={link.path}>{link.title}</Link>;
         })}
-      </ul>
-    </nav>
+      </NavLinks>
+    </Navbar>
   );
 }
