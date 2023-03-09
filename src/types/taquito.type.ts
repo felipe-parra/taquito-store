@@ -4,4 +4,8 @@ export type TaquitoType = {
   description: string;
   price: number;
   image: string;
+  category: string;
+  quantity?: number;
+  promotion?: boolean;
+  promotionDiscount?: number;
 };
