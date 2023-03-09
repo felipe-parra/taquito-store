@@ -9,12 +9,13 @@ import './styles/tailwind.css'
 function App() {
   return (
     <div className="w-screen h-screen bg-black" >
-
-      <Routes element={<AuthenticatedLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/taquito/:taquitoID/detail" element={<TaquitoDetailPage />} />
-        <Route path="/cart" element={<CartPage />} />
-      </Routes>
+      <AuthenticatedLayout>
+        <Routes element={<AuthenticatedLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/taquito/:taquitoID/detail" element={<TaquitoDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </AuthenticatedLayout>
     </div>
   );
 }
